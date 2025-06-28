@@ -39,6 +39,7 @@ nav a:hover{
     background-color: #425d48;
     color: #041f0c;
     padding: 10px;
+    transition-duration: 0.5s;
 }
 section{
     background-color: white;
