@@ -33,6 +33,12 @@ nav a{
     text-decoration: none;
     padding: 10px;
 }
+nav a:hover{
+    background-color: var(--color3);
+    color: #041f0c;
+    padding: 10px;
+    transition-duration: 0.5s;
+}
 p{
     margin-bottom: 50px;
 }

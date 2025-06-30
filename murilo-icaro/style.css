@@ -36,6 +36,12 @@ nav a{
 p{
     margin-bottom: 50px;
 }
+nav a:hover{
+    background-color: var(--color4);
+    color: var(--color1);
+    padding: 10px;
+    transition-duration: 0.5s;
+}
 p.list{
     margin-bottom: 0px;
 }
