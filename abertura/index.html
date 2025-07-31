@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apresentação: Energias Renováveis</title>
   <style>
     * {
       box-sizing: border-box;
     }
+
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -15,24 +16,47 @@
       padding: 0;
       background-color: #f4f4f4;
       color: #333;
+      animation: fadeInBody 1s ease-in;
     }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     header, footer {
       background-color: #004d40;
       color: white;
       text-align: center;
       padding: 20px;
+      animation: slideDown 0.8s ease-in-out;
     }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
     main {
       padding: 20px;
     }
+
     .accordion {
       width: 100%;
       max-width: 800px;
       margin: 0 auto;
     }
+
     input[type="radio"] {
       display: none;
     }
+
     label {
       display: block;
       background-color: #00695c;
@@ -43,11 +67,15 @@
       cursor: pointer;
       font-size: 16px;
       user-select: none;
-      transition: background-color 0.3s;
+      transition: all 0.3s ease;
+      transform: scale(1);
     }
+
     label:hover {
       background-color: #004d40;
+      transform: scale(1.02);
     }
+
     .content-section {
       background-color: #fff;
       padding: 20px;
@@ -55,17 +83,47 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       display: none;
       margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlide 0.5s ease forwards;
+      animation-delay: 0.1s;
     }
+
     input[type="radio"]:checked + label + .content-section {
       display: block;
     }
+
+    @keyframes fadeSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     ul {
       margin: 10px 0 20px 20px;
     }
+
+    a {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #00695c;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #004d40;
+      transform: scale(1.05);
+    }
+
     @media (max-width: 600px) {
       header, footer, main {
         padding: 15px 10px;
       }
+
       label {
         font-size: 18px;
         padding: 15px 20px;
@@ -81,11 +139,11 @@
 
   <main>
     <div class="accordion">
-      <input type="radio" id="hidraulica" name="accordion">
+      <input type="radio" id="hidraulica" name="accordion" />
       <label for="hidraulica">Energia Hidráulica</label>
       <section class="content-section">
         <h2>Energia Hidráulica</h2>
-        <p><strong>Funcionamento:</strong> Utiliza a força da água em movimento (rios e quedas d'água) para girar turbinas e gerar eletricidade nas usinas hidrelétricas.</p>
+        <p><strong>Funcionamento:</strong> Utiliza a força da água em movimento...</p>
         <p><strong>Vantagens:</strong></p>
         <ul>
           <li>Fonte limpa e renovável</li>
@@ -94,65 +152,41 @@
         <p><strong>Desvantagens:</strong></p>
         <ul>
           <li>Impacto ambiental nos ecossistemas aquáticos</li>
-          <li>Deslocamento de comunidades e alteração de habitats</li>
+          <li>Deslocamento de comunidades...</li>
         </ul>
-        <p><strong>Localização no Brasil:</strong> Principalmente nas regiões Sudeste e Sul. Exemplo: Usina de Itaipu (PR).</p>
       </section>
 
-      <input type="radio" id="mare" name="accordion">
+      <input type="radio" id="mare" name="accordion" />
       <label for="mare">Energia das Marés (Maremotriz)</label>
       <section class="content-section">
         <h2>Energia das Marés (Maremotriz)</h2>
-        <p><strong>Funcionamento:</strong> Aproveita o movimento periódico das marés (fluxo e refluxo) para movimentar turbinas instaladas em barragens ou canais costeiros.</p>
-        <p><strong>Vantagens:</strong></p>
-        <ul>
-          <li>Fonte previsível e limpa</li>
-          <li>Produção constante em áreas costeiras adequadas</li>
-        </ul>
-        <p><strong>Desvantagens:</strong></p>
-        <ul>
-          <li>Alto custo inicial de instalação</li>
-          <li>Limitada a regiões com grande amplitude de maré</li>
-        </ul>
-        <p><strong>Localização no Brasil:</strong> Potencial identificado no litoral do Nordeste, especialmente no Ceará e Rio Grande do Norte.</p>
+        <p><strong>Funcionamento:</strong> Aproveita o movimento periódico das marés...</p>
       </section>
 
-      <input type="radio" id="biomassa" name="accordion">
+      <input type="radio" id="biomassa" name="accordion" />
       <label for="biomassa">Biomassa</label>
       <section class="content-section">
         <h2>Biomassa</h2>
-        <p><strong>Funcionamento:</strong> Geração de energia por meio da queima, fermentação ou gaseificação de matéria orgânica (bagaço da cana, madeira, resíduos agrícolas).</p>
-        <p><strong>Vantagens:</strong></p>
-        <ul>
-          <li>Aproveitamento de resíduos orgânicos</li>
-          <li>Redução da emissão de gases se bem controlada</li>
-        </ul>
-        <p><strong>Desvantagens:</strong></p>
-        <ul>
-          <li>Queima pode gerar poluentes se não for bem filtrada</li>
-          <li>Depende da produção agrícola e logística de coleta</li>
-        </ul>
-        <p><strong>Localização no Brasil:</strong> Destaque em estados produtores de cana-de-açúcar como São Paulo, Minas Gerais e Pernambuco.</p>
+        <p><strong>Funcionamento:</strong> Geração de energia por meio da queima...</p>
       </section>
 
-      <input type="radio" id="dados" name="accordion">
+      <input type="radio" id="dados" name="accordion" />
       <label for="dados">Dados e Comparações</label>
       <section class="content-section">
         <h2>Dados e Comparações no Brasil</h2>
         <ul>
-          <li>A energia hidráulica representa cerca de 60% da matriz elétrica brasileira.</li>
-          <li>A biomassa responde por aproximadamente 9% da produção de energia elétrica.</li>
-          <li>A energia maremotriz ainda está em fase de estudo e desenvolvimento no país.</li>
+          <li>A energia hidráulica representa cerca de 60%...</li>
         </ul>
       </section>
 
-      <input type="radio" id="panorama" name="accordion">
+      <input type="radio" id="panorama" name="accordion" />
       <label for="panorama">Panorama Futuro</label>
       <section class="content-section">
         <h2>Panorama Futuro no Brasil</h2>
-        <p>O Brasil possui grande potencial para expandir o uso de fontes renováveis. A tendência é diversificar a matriz energética com maior investimento em biomassa, solar, eólica e, futuramente, energia maremotriz. Isso reduzirá a dependência de hidrelétricas e ajudará a combater as mudanças climáticas.</p>
+        <p>O Brasil possui grande potencial para expandir o uso de fontes renováveis...</p>
       </section>
-      <input type="radio" id="perguntas" name="accordion">
+
+      <input type="radio" id="perguntas" name="accordion" />
       <label for="perguntas">Perguntas</label>
       <section class="content-section">
         <a href="https://forms.gle/bRqSxLPVvJ4aFE358">Clique aqui para responder</a>
@@ -160,3 +194,4 @@
     </div>
   </main>
 </body>
+</html>
